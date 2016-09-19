@@ -93,6 +93,8 @@ You should now be able to call the command. Just open the command pane and searc
   that has this tag should be considered a candidate for it to be triggered. All open files are represented as editor objects and they all have by default this tag.
 * The final piece of the puzzle is the trigger we defined for our behavior. So whenever someone\/somewhere raises a `:trigger` event on an editor instance Light Table now knows enough to invoke our behavior reaction function. Triggering :focus is something that is done inside another behavior in Light Table, let's not worry to much about that for now.
 
+### Flexibility through the BOT architecture 
+
 The combination of **B**ehavior, **O**bject and **T**ags is what is described as the [BOT Architecture](/the-light-table-bot.md) in Light Table. It gives you flexibility in several dimensions;
 
 1. **Tags**: You can target behaviors to object with certain tags. So if you change the above behavior wiring to 
@@ -102,7 +104,9 @@ The combination of **B**ehavior, **O**bject and **T**ags is what is described as
   4. When you save the behaviors file, the changes will be applied at once. Runtime.
 
 2. **Triggers**: You can have multiple triggers for your behavior. Say you wanted to also display the filename whenever the editor changes. Just add `:change` to the set of triggers in your behavior and reevaluate it.
-3. **Objects**: You can add or remove tags to objects both at declaration time, programatically or in your User.behaviors file. For example if you add the following to your `User.behaviors` file `[:editor :lt.obj/add-tag :mytag]` all editor objects in Light Table will also receive the `:mytag` tag. 
+
+3. **Objects**: You can add or remove tags to objects both at declaration time, programatically or in your User.behaviors file. For example if you add the following to your `User.behaviors` file `[:editor :lt.obj/add-tag :mytag]` all editor objects in Light Table will also receive the `:mytag` tag.
+4. **Behaviors**: What's more you can also add or remove behaviors to objects during runtime both in your  `User.behaviors`file or  programatically.  
 
 You don't need to understand or use all this from the off, but hopefully you get and idea of the flexibility of the BOT architecture.
 
