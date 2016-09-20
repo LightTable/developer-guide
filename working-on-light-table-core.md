@@ -2,9 +2,3 @@
 
 
 
-## Build from source
-
-
-
-##  
-

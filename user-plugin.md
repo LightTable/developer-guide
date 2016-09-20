@@ -21,11 +21,13 @@ Your complete configuration, including plugins you've installed, is stored in a 
 * To open your `user.cljs` at anytime use the command `Settings: User script`. 
 * Inside the default `user.cljs` is an example command and behavior.  
 
-Run the command `User: Say Hello` to see your own command!
+![](/assets/lt-user-plugin-hello.png)
+
+Run the command `User: Say Hello` to see your own command in action !
 
 ## Adding your own command
 
-Commands are the user facing functionality in Light Table. They are typically listed in the Command Pane and you can assign shortcuts to the. The are the easiest place to start, so let's go ahead and make our own little command. Open `user.cljs` and add this snippet.
+Commands are the user facing functionality in Light Table. They are typically listed in the Command Pane and you can assign keyboard shortcuts to them. The are the easiest place to start, so let's go ahead and make our own little command. Open `user.cljs` and add this snippet.
 
 ```clojure
 (cmd/command {:command :user.print-filename                       ;; 1.
@@ -39,7 +41,7 @@ Commands are the user facing functionality in Light Table. They are typically li
 1. We give our command an id. That way we can refer to that command from other places. Typically you want to be able to assign keyboard shortcuts to a command. The id is how you can map a keyboard shortcut to your command.
 2. Give the command a sound description. Commands are shown in the Command Pane in Light Table, so you want to provide a meaningful description so people know what the command does. 
 3. This is where we define what's going to happen when the command is to be executed
-4. We are using a function `last-active` from the `lt.objs.editor.pool` namespace to get hold of the current Editor. Of currently focused open file if that makes more sense. Actually we are not getting the file, but we are getting an `object` representing that file. 
+4. We are using a function `last-active` from the `lt.objs.editor.pool` namespace to get hold of the current Editor. Or currently focused open file if that makes more sense. Actually we are not getting the file, but we are getting an `object` representing that file. 
 5. The editor object we have access to is a special kind of object. It's basically a wrapped ClojureScript [atom. ](http://clojure.org/reference/atoms). Now that's not to important, the main point is that this object contains meta information that we can access. So in JavaScript terms you could read this as `ed.info.path`
 
 **To make this command available we need to connect to the user plugin project and then evaluate it.**
@@ -61,7 +63,7 @@ You should now be able to call the command. Just open the command pane and searc
 
 ```clojure
 (behavior ::user.display-filename                                           ;; 1.
-          :desc "Show filename in statusbar for while when focused"         ;; 2.
+          :desc "Show filename in statusbar for a while when focused"       ;; 2.
           :triggers #{:focus}                                               ;; 3.
           :reaction (fn [ed]                                                ;; 4.
                       (lt.objs.notifos/set-msg! (-> @ed :info :path))))     ;; 5.
@@ -93,7 +95,8 @@ You should now be able to call the command. Just open the command pane and searc
   that has this tag should be considered a candidate for it to be triggered. All open files are represented as editor objects and they all have by default this tag.
 * The final piece of the puzzle is the trigger we defined for our behavior. So whenever someone\/somewhere raises a `:trigger` event on an editor instance Light Table now knows enough to invoke our behavior reaction function. Triggering :focus is something that is done inside another behavior in Light Table, let's not worry to much about that for now.
 
-### Flexibility through the BOT architecture 
+![](/assets/lt-user-plugin-beh.png)
+### Flexibility through the BOT architecture
 
 The combination of **B**ehavior, **O**bject and **T**ags is what is described as the [BOT Architecture](/the-light-table-bot.md) in Light Table. It gives you flexibility in several dimensions;
 
@@ -106,7 +109,9 @@ The combination of **B**ehavior, **O**bject and **T**ags is what is described as
 2. **Triggers**: You can have multiple triggers for your behavior. Say you wanted to also display the filename whenever the editor changes. Just add `:change` to the set of triggers in your behavior and reevaluate it.
 
 3. **Objects**: You can add or remove tags to objects both at declaration time, programatically or in your User.behaviors file. For example if you add the following to your `User.behaviors` file `[:editor :lt.obj/add-tag :mytag]` all editor objects in Light Table will also receive the `:mytag` tag.
-4. **Behaviors**: What's more you can also add or remove behaviors to objects during runtime both in your  `User.behaviors`file or  programatically.  
+
+4. **Behaviors**: What's more you can also add or remove behaviors to objects during runtime both in your  `User.behaviors`file or  programatically.
+
 
 You don't need to understand or use all this from the off, but hopefully you get and idea of the flexibility of the BOT architecture.
 
