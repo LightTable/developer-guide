@@ -8,6 +8,7 @@
 * [Creating plugins](creating-plugins.md)
     * [Creating a Skin](creating-a-skin.md)
     * [Creating a Language Plugin](creating-a-language-plugin.md)
+    * [Creating a LT Client Using Node](creating-a-lt-client-using-node.md)
 * [Working on Light Table Core](working-on-light-table-core.md)
 * [Build from Source](build-from-source.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)

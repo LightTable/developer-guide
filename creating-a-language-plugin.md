@@ -12,7 +12,10 @@ Outline the various things you typically would do when creating a language plugi
 
 
 
-## Using the in-buildt LT Node.JS as a LT client
 
-\(with inspiration from elm-light\)
+
+
+
+
+
 
