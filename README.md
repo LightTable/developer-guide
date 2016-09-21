@@ -18,9 +18,7 @@ Light Table is based on two key components:
 * [Electron](http://electron.atom.io/) - A framework for creating native Desktop web applications. It comes with two vital parts a node server and a chromium browser. 
 * [CodeMirror](https://codemirror.net/) - An editor implemented in JavaScript for use in Web Browsers. The majority of the editor features in Light Table is based on CodeMirror and CodeMirror add-ons. 
 
-This a very powerful platform which allows you to do some really awesome things. Anything you can do in a browser you can wield Light Table to do. Couple that with the power of having a Node.js server and the npm package eco-system at your disposal, there is really a lot of power at your disposal.
-
-
+This a very powerful platform which allows you to do some really awesome things. Anything you can do in a browser you can wield Light Table to do. Couple that with the power of having a Node.js server and the npm package eco-system at your disposal. 
 
 If you are new to Light Table, let's move on to the [Getting Started chapter](/chapter1.md) !
 
