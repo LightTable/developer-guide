@@ -4,11 +4,9 @@
 
 If you are not already familiar with the [BOT Architecture](/the-light-table-bot.md) in Light Table, it's highly recommended that you read through that before starting to develop a plugin for Light Table.
 
-TODO check if the lein template is usable or needs an upgrade
+**TODO** check if the lein template is usable or needs an upgrade
 
 Walk through the various bits and pieces..... \(project.clj, plugin.edn, plugin behaviours, src etc\)
-
-
 
 ## Developing
 
