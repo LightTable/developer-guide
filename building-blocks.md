@@ -18,7 +18,7 @@ The right sidebar in Light Table allows for adding items dynamically. By default
             [lt.util.dom :as dom]) 
   (:require-macros [lt.macros :refer [defui behavior]]))
 
-(defui wrapper [this]                                                  // 1.
+(defui wrapper [this]                                                 // 1.
   [:div.modulebrowser.filter-list 
     [:ul.results "Replace me..."]])
 
@@ -59,7 +59,7 @@ The right sidebar in Light Table allows for adding items dynamically. By default
                       (object/raise modulebrowser-bar :show-modules))})
 
 ```
-1. defui is a macro which helps produce html dom elements. Here we just create a wrapper div for our sidebar item
+1. `defui` is a macro which helps produce html dom elements. Here we just create a wrapper div for our sidebar item
 2. Much like in [hiccup](https://github.com/weavejester/hiccup) in `defui` we can work with markup as data structures. We can map, filter and the like. Here we map over the modules to produce `li` elements
 3. We've created a function responsible for rendering our modules list
 4. `dom/$` is a utility function for selecting the first item satisifying the given query selector. We retrieve the empty ul element 

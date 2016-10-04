@@ -4,7 +4,16 @@
 
 If you are not already familiar with the [BOT Architecture](/the-light-table-bot.md) in Light Table, it's highly recommended that you read through that before starting to develop a plugin for Light Table.
 
-**TODO** check if the lein template is usable or needs an upgrade
+### Bootstrap using the Leiningen lt-plugin
+
+The easiest route to get started with creating a new plugin is to use the `lt-plugin` for [Leiningen. ](http://leiningen.org/) If haven't installed Leiningen and don't feel like doing so, you can obviously create the files listed below manually.
+
+To get started. Just type the following in a terminal 
+
+- `#> lein new lt-plugin myplugin`
+- Then add the <myplugin> folder to you Light Table workspace
+
+
 
 Walk through the various bits and pieces..... \(project.clj, plugin.edn, plugin behaviours, src etc\)
 
