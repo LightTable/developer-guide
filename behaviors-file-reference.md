@@ -20,7 +20,7 @@ or multiple \(in order\)
 
 `[:files :lt.objs.files/file-types [{:exts [:elm], :mime "text/x-elm", :tags [:editor.elm], :name "elm"}]]`
 
-Light Table ships with a wide range of mapping to file types to provide syntax highlighting. However you might be developing a plugin for a new language not covered. This config allows you to associate a new file extentions and provide a tag for editors of this file type. In the example above we've added support for files from the Elm programming language. Every Elm file editor object will now get a tag `:editor.elm`.This is obviously useful when you want to configure behaviors that are specific for Elm editors \(say like code eval, docs etc\). 
+Light Table ships with a wide range of mapping to file types to provide syntax highlighting. However you might be developing a plugin for a new language not covered. This config allows you to associate a new file extensions and provide a tag for editors of this file type. In the example above we've added support for files from the Elm programming language. Every Elm file editor object will now get a tag `:editor.elm`.This is obviously useful when you want to configure behaviors that are specific for Elm editors \(say like code eval, docs etc\). 
 
 ## Adding tags to objects of a given tag
 
