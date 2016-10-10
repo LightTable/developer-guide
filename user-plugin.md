@@ -116,5 +116,5 @@ The combination of **B**ehavior, **O**bject and **T**ags is what is described as
 
 You don't need to understand or use all this from the very start, but hopefully you get an idea of the flexibility of the BOT architecture.
 
-> You can get far by just using commands and normal ClojureScript functions, but if you want to create a runtime configurable plugin you'll want to start looking at using behaviors.
+> You can get far just by using commands and simple ClojureScript functions, but if you want to create a runtime configurable plugin you'll want to start looking at using behaviors.
 
