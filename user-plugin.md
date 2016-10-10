@@ -7,7 +7,7 @@ we're going to walk through a couple of simple examples.
 
 The location of the user plugin depends on your OS
 
-* Mac: ~\/Library\/Application\/Support\/LightTable\/User
+* Mac: ~\/Library\/Application\ Support\/LightTable\/User
 * Linux: ~\/.config\/LightTable\/User
 * Windows: %APPDATALOCAL%\/LightTable\/User
 
