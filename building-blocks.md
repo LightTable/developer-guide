@@ -13,8 +13,8 @@ The right sidebar in Light Table allows for adding items dynamically. By default
 ```clojure
 (ns lt.plugins.myplugin.modules 
   (:require [lt.object :as object] 
-            [lt.objs.sidebar :as sidebar]  
-            [lt.objs.command :as cmd]   
+            [lt.objs.sidebar :as sidebar]
+            [lt.objs.command :as cmd] 
             [lt.util.dom :as dom]) 
   (:require-macros [lt.macros :refer [defui behavior]]))
 
@@ -59,17 +59,17 @@ The right sidebar in Light Table allows for adding items dynamically. By default
                       (object/raise modulebrowser-bar :show-modules))})
 
 ```
-1. `defui` is a macro which helps produce html dom elements. Here we just create a wrapper div for our sidebar item
-2. Much like in [hiccup](https://github.com/weavejester/hiccup) in `defui` we can work with markup as data structures. We can map, filter and the like. Here we map over the modules to produce `li` elements
+1. `defui` is a macro which helps produce HTML DOM elements. Here we just create a wrapper div for our sidebar item
+2. Much like in [hiccup](https://github.com/weavejester/hiccup) in `defui` we can work with markup as data structures. We can use map, filter and the like. Here we map over the modules to produce `li` elements
 3. We've created a function responsible for rendering our modules list
-4. `dom/$` is a utility function for selecting the first item satisifying the given query selector. We retrieve the empty ul element 
-5. Now we replace the empty ul element from above with the ul element created from `render-modules`
-6. We've created a behavior to allow the display of the modulebrowser to be configurable
+4. `dom/$` is a utility function for selecting the first item satisfying the given query selector. We retrieve the empty `ul` element.
+5. Now we replace the empty `ul` element from above with the `ul` element created from `render-modules`
+6. We've created a behavior to allow the display of the module browser to be configurable
 7. We raise a `:toggle` trigger on the `rightbar` object in the `lt.objs.sidebar` namespace. The responding behavior
-will toggle the display of the sidebar and making sure that our modulebrowser is shown as the active/visible item (alternatively hiding the sidebar all together)
-8. We render our current list of modules. Currently hardcoded, so imagine the list of modules is created somewhat more dynamically !
-9. We've configured our modulebrowser object programtically to be tied to our show behavior. Normally you would do this in a `.behaviors` file for your plugin declaratively 
-10. The init function is called upon creation of our object. If the init function returns markup, that will be available
+will toggle the display of the sidebar and making sure that our module browser is shown as the active/visible item (alternatively hiding the sidebar all together)
+8. We render our current list of modules. Currently hard-coded, so imagine the list of modules is created some what more dynamically !
+9. We've configured our module browser object programatically to be tied to our show behavior. Normally you would do this in a `.behaviors` file for your plugin declaratively 
+10. The init function is called upon the creation of our object. If the init function returns markup, that will be available
 through the `object/->content` function we saw in our `render-modules` function.
 11. We create an instance of our modulebrowser object
 12. This is how we add an additional item to the Light Table sidebar. It will be added, but not visible (until we trigger the `:toggle` behavior mentioned previously
