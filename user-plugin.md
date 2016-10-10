@@ -42,20 +42,20 @@ Commands are the user facing functionality in Light Table. They are typically li
 2. Give the command a sound description. Commands are shown in the Command Pane in Light Table, so you want to provide a meaningful description so people know what the command does. 
 3. This is where we define what's going to happen when the command is to be executed
 4. We are using a function `last-active` from the `lt.objs.editor.pool` namespace to get hold of the current Editor. Or currently focused open file if that makes more sense. Actually we are not getting the file, but we are getting an `object` representing that file. 
-5. The editor object we have access to is a special kind of object. It's basically a wrapped ClojureScript [atom. ](http://clojure.org/reference/atoms). Now that's not to important, the main point is that this object contains meta information that we can access. So in JavaScript terms you could read this as `ed.info.path`
+5. The editor object we have access to is a special kind of object. It's basically a wrapped ClojureScript [atom. ](http://clojure.org/reference/atoms). Now that's not too important, the main point is that this object contains meta information that we can access. So in JavaScript terms you could read this as `ed.info.path`
 
 **To make this command available we need to connect to the user plugin project and then evaluate it.**
 
 1. Save the file - When you hit save it will first connect to the project and then compile the ClojureScript code in your user plugin to JavaScript. So first time it take a little time, after that it will be much faster.
 2. With the cursor inside the command definition\/\(form in Clojure terms\) 
   1. Open the command pane \(ctrl-space\)
-  2. Search for the command `Eval: Eval a form in editor`. Select that
+  2. Search for the command `Eval: Eval a form in editor`. Select that option.
   3. Light Table will tell you to connect to plugin. Click the button `Connect a Client`
   4. From the list of available clients select `Light Table UI`
   5. You should see `nil` shown after the form. If not try to evaluate one more time.
 
 
-> When you evaluate code like we just did, LIght Table will during runtime compile the code \(using the ClojureScript compiler\) to JavaScript and add the resulting JavaScript to the running Light Table. You can now make changes to the command as you wish, and re-evaluate it. That will replace the runtime definition of the command with a new definition. This way of developing provides really fast turnaround and promotes a stepwise interactive approach to buidling things.
+> When you evaluate code like we just did, Light Table will, during runtime compile the code \(using the ClojureScript compiler\) to JavaScript and add the resulting JavaScript to the running Light Table instance. You can now make changes to the command as you wish, and re-evaluate it. That will replace the runtime definition of the command with a new definition. This way of developing provides really fast turnaround and promotes a stepwise interactive approach to buidling things.
 
 You should now be able to call the command. Just open the command pane and search for the description you gave the command. Select \`View -&gt; Console\` from the menu to open the console if you don't already have it open. Voila you should see the filename of the editor you had focus on when invoking your new command !
 
@@ -113,7 +113,7 @@ The combination of **B**ehavior, **O**bject and **T**ags is what is described as
 4. **Behaviors**: What's more you can also add or remove behaviors to objects during runtime both in your  `User.behaviors`file or  programatically.
 
 
-You don't need to understand or use all this from the off, but hopefully you get and idea of the flexibility of the BOT architecture.
+You don't need to understand or use all this from the off, but hopefully you get an idea of the flexibility of the BOT architecture.
 
 > You can get far by just using commands and normal ClojureScript functions, but if you want to create a runtime configurable plugin you'll want to start looking at using behaviors.
 
