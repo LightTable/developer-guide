@@ -4,9 +4,20 @@
 
 If you are not already familiar with the [BOT Architecture](/the-light-table-bot.md) in Light Table, it's highly recommended that you read through that before starting to develop a plugin for Light Table.
 
-**TODO** check if the lein template is usable or needs an upgrade
+### Bootstrap using the Leiningen lt-plugin
 
-Walk through the various bits and pieces..... \(project.clj, plugin.edn, plugin behaviours, src etc\)
+The easiest route to get started with creating a new plugin is to use the `lt-plugin` for [Leiningen. ](http://leiningen.org/) If haven't installed Leiningen and don't feel like doing so, you can obviously create the files listed below manually.
+
+To get started. Just type the following in a terminal 
+- `#> lein new lt-plugin myplugin`
+- Then add the <myplugin> folder to your Light Table workspace
+
+|Structure      | Description |
+| ------------- |-------------|
+|![](/assets/plugin-files.png) | <ul><li><b>myplugin.cljs</b> - Source entry point for your plugin.</li><li><b>myplugin.behaviors</b> - Configuration of your plugin. Here you can configure behaviors, load the compiled plugin source, load additional JavaScript or CSS files etc.</li><li><b>myplugin_compiled.js</b> - This is just a placeholder for the compiled source of your plugin. It will be generated/updated by the compiler</li><li><b>plugin.edn</b> - Plugin description which described the key attributes of your plugin. It is necessary for the plugin manager in Light Table</li><li><b>project.clj</b> - ClojureScript - Project file for your plugin. It is needed by the compiler. Here you can add 3.rd party ClojureScript libraries</li></ul>|
+
+> For a more in-depth explanation of what you can configure in your `.behaviors` file check out the [Behaviors File Reference](/behaviors-file-reference.md)
+
 
 ## Developing
 
@@ -29,7 +40,5 @@ If it's your first time submitting a plugin, make sure you have a valid `plugin.
 
 `*` Means the field is required.
 
-When releasing a new version, you must update the `:version` key and push the new git tag e.g. `git tag X.X.X && git push --tags`. With your updated `plugin.edn`, add or update your plugin to the [plugin metadata repository](https://github.com/LightTable/plugin-metadata) using [these instructions](https://github.com/LightTable/plugin-metadata#submit-a-plugin).
-
-### 
+When releasing a new version, you must update the `:version` key and push the new git tag e.g. `git tag X.X.X && git push --tags`. With your updated `plugin.edn`, add or update your plugin to the [plugin metadata repository](https://github.com/LightTable/plugin-metadata) using [these instructions](https://github.com/LightTable/plugin-metadata#submit-a-plugin). 
 
