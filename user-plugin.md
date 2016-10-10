@@ -38,7 +38,7 @@ Commands are the user facing functionality in Light Table. They are typically li
 
 ```
 
-1. We give our command an id. That way we can refer to that command from other places. Typically you want to be able to assign keyboard shortcuts to a command. The id is how you can map a keyboard shortcut to your command.
+1. We give our command an ID. That way we can refer to that command from other places. Typically you want to be able to assign keyboard shortcuts to a command. The ID is how you can map a keyboard shortcut to your command.
 2. Give the command a sound description. Commands are shown in the Command Pane in Light Table, so you want to provide a meaningful description so people know what the command does. 
 3. This is where we define what's going to happen when the command is to be executed
 4. We are using a function `last-active` from the `lt.objs.editor.pool` namespace to get hold of the current Editor. Or currently focused open file if that makes more sense. Actually we are not getting the file, but we are getting an `object` representing that file. 
