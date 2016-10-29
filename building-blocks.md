@@ -76,6 +76,8 @@ The right sidebar in Light Table allows for adding items dynamically. By default
 
 ## Adding an item to the statusbar
 
+The statusbar is a convenient area for showing small snippets of useful information in Light Table. It is located at the bottom of UI in Light Table. In this example we are going to create a simple status item that shows the number of lines for the currently focused\/active editor.
+
 ```clojure
 (ns lt.plugins.linecounter
   "Example statusbar item"
@@ -125,3 +127,4 @@ The right sidebar in Light Table allows for adding items dynamically. By default
 9. Since we are listening to change events for any editor, we want to constrain it so that we don't update the line counter other than when the event is related to the currently active editor. We get trigger the ::update-linecount behavior and pass it the current line count for the editor in question
 10. Rather than configuring the editor related behavior in a .behaviors file, we do it programaticcaly here by adding our behavior programatically to all objects with the `:editor` tag \(ie any editor\).
 
+![](/assets/statusbar-item.png)
