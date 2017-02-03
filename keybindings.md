@@ -20,11 +20,10 @@ In this `.keymap` file, which is simply EDN, you can add and remove keybindings.
 ```Clojure
 {:+ 
  {:foo.focused { "o" [:lt.plugins.foo/open-selection]
-                 "x" [:lt.plugins.foo/close-parent]}}
+                 "x" [:lt.plugins.foo/close-parent]}
+ :editor { "pmeta-s" [:lt.plugins.foo/open-selection]}}
  :-
- {:editor { "pmeta-s" [:save]}}
- :+
- {:editor { "pmeta-s" [:lt.plugins.foo/open-selection]}}}
+ {:editor { "pmeta-s" [:save]}}}
 ``` 
 
 In this example there are several things to note:
