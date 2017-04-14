@@ -15,4 +15,5 @@
 * [Build from Source](build-from-source.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 * [Keybindings](keybindings.md)
+* [Helpful Resources](helpful-resources.md)
 
