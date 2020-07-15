@@ -5,7 +5,7 @@ The following resources may be of use to anyone working on Light Table or its pl
 - Introduction to BOT: [The IDE as a value](http://www.chris-granger.com/2013/01/24/the-ide-as-data/)
 - Official [README](https://github.com/LightTable/LightTable/blob/master/README.md)
 - Helpful LT [discussion topic](https://groups.google.com/forum/#!topic/light-table-discussion/T3DhzWhabok).
-- [Getting Started Programming Light Table](http://devblog.reverb.com/post/85325435561/getting-started-programming-light-table) by Joshua Emmons
+- [Getting Started Programming Light Table](http://reverbdev.tumblr.com/post/85325435561/getting-started-programming-light-table) by Joshua Emmons
 
 ## Creating a plugin
 
